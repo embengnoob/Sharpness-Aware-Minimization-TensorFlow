@@ -20,7 +20,7 @@ def get_training_model():
     x = resnet_cifar10.learner(x, n_blocks)
 
     # The Classifier for 10 classes
-    outputs = resnet_cifar10.classifier(x, 10)
+    outputs = resnet_cifar10.classifier(x, 100)
 
     # Instantiate the Model
     model = tf.keras.Model(inputs, outputs)
