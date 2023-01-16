@@ -159,13 +159,14 @@ n_blocks = ((depth - 2) // 9) - 1
 inputs = Input(shape=(32, 32, 3))
 
 # The Stem Convolution Group
+
 x = stem(inputs)
    
 # The learner
 x = learner(x, n_blocks)
 
-# The Classifier for 10 classes
-outputs = classifier(x, 10)
+# The Classifier for 100 classes
+outputs = classifier(x, 100)
 
 # Instantiate the Model
 model = Model(inputs, outputs)
