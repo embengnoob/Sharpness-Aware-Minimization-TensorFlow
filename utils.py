@@ -28,7 +28,8 @@ def get_training_model():
     
     return model
 
-def plot_history(history):
+def plot_history(history, child_id):
+    plt.figure(figsize=(18, 8)) 
     plt.plot(history.history["loss"], label="Training Loss")
     plt.plot(history.history["val_loss"], label="Validation Loss")
     plt.plot(history.history["accuracy"], label="Training Accuracy")
@@ -36,3 +37,4 @@ def plot_history(history):
     plt.legend()
     plt.grid()
     plt.show()
+    plt.savefig('history_plot_' + str(child_id) + '.png', bbox_inches='tight', dpi=350)
