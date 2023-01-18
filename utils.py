@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Reference 
 # https://github.com/GoogleCloudPlatform/keras-idiomatic-programmer/blob/master/zoo/resnet/resnet_cifar10.py
-def get_training_model():
+def get_training_model(n_classes):
     # ResNet20
     n = 2
     depth =  n * 9 + 2
@@ -20,7 +20,7 @@ def get_training_model():
     x = resnet_cifar10.learner(x, n_blocks)
 
     # The Classifier for 100 classes
-    outputs = resnet_cifar10.classifier(x, 100)
+    outputs = resnet_cifar10.classifier(x, n_classes)
 
     # Instantiate the Model
     model = tf.keras.Model(inputs, outputs)
